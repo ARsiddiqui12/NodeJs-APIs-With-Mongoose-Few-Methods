@@ -7,16 +7,23 @@ var route = express.Router();
 route.get('/',(req,res)=>res.send("Access Denied!"));
 
 route.post('/create-product',(req,res)=>{
+   
+    // product.create({
 
-    product.create({
+    //     ProductName:req.body.ProductName,
+    //     ProductPrice:req.body.ProductPrice,
+    //     ProductDescription:req.body.ProductDescription
 
-        ProductName:req.body.ProductName,
-        ProductPrice:req.body.ProductPrice,
-        ProductDescription:req.body.ProductDescription
+    // },(err,doc)=>{
+    //     res.json(doc);
+    // });
+    product.create(req.body).then((result) => {
+        console.log(`Successfully saved ${result.length} users`);
+      }).catch((err) => {
+        console.log(err);
+      });
 
-    },(err,doc)=>{
-        res.json(doc);
-    });
+      res.send("created");
 
 });
 
@@ -97,6 +104,49 @@ route.get('/find-product-by-id',(req,res)=>{
 
 
     
+
+});
+
+route.get('/count-products',async(req,res)=>{
+
+     const count = await product.countDocuments();
+
+      res.send("Total Products"+count);
+
+});
+
+route.get('/count-products-two',async(req,res)=>{
+
+    let total = 0;
+
+    await product.countDocuments().then((count)=>{
+
+        total = count;
+
+    });
+    
+    console.log(total);
+    
+    res.send("Total Documents Count : "+total);
+});
+
+route.get('/product-update',(req,res)=>{
+
+   
+    product.updateOne({ _id: req.query.id }, { $set: { ProductName: 'new name' } }, function (err, res) {
+        if (err) return handleError(err);
+        console.log(res);
+      });
+
+    res.send("product updated!");
+
+});
+
+route.get('/product-update-many',(req,res)=>{
+
+    product.find({ ProductName: 'new name' }).updateMany({ $set: { ProductName: "HELLO WORLD" } }).exec();
+
+    res.send("UPDATED MANY");
 
 });
 

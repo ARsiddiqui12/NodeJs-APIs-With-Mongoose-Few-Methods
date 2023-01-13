@@ -7,7 +7,7 @@ const connectToDb = async () => {
 mongoose.set('strictQuery', false);
 
 await mongoose
-  .connect('YOUR CONNECTION STRING')
+  .connect('YOUR CONNECTION STRING HERE')
   .then((x) => {
     console.log(`MongoDB Connected Successfully!`)
   })

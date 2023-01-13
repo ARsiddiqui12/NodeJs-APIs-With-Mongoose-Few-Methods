@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "8937208f-f606-4101-ae1a-7cd1173e0bc8",
+		"name": "Mongoose",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25314754"
+	},
+	"item": [
+		{
+			"name": "Remove Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/remove-product?id=63c1a1406a098ce1e696c002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"remove-product"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "63c1a1406a098ce1e696c002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"ProductName\":\"The Dummy Product 1\",\r\n        \"ProductPrice\":195,\r\n        \"ProductDescription\":\"The Dummy Product 1\"\r\n    },\r\n    {\r\n        \"ProductName\":\"The Dummy Product 2\",\r\n        \"ProductPrice\":195,\r\n        \"ProductDescription\":\"The Dummy Product 2\"\r\n    },\r\n    {\r\n        \"ProductName\":\"The Dummy Product 3\",\r\n        \"ProductPrice\":195,\r\n        \"ProductDescription\":\"The Dummy Product 3\"\r\n    },\r\n    {\r\n        \"ProductName\":\"The Dummy Product 4\",\r\n        \"ProductPrice\":195,\r\n        \"ProductDescription\":\"The Dummy Product 4\"\r\n    },\r\n    {\r\n        \"ProductName\":\"The Dummy Product 5\",\r\n        \"ProductPrice\":195,\r\n        \"ProductDescription\":\"The Dummy Product 5\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8012/api/create-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"create-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Truncate Collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/remove-all-products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"remove-all-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all records - find()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/find-all-records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"find-all-records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findone by string value = findone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/find-product-by-string?ProductName=The Dummy Product One",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"find-product-by-string"
+					],
+					"query": [
+						{
+							"key": "ProductName",
+							"value": "The Dummy Product One"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id - findbyid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/find-product-by-id?id=63c04f6adc772b40a2b408b4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"find-product-by-id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "63c04f6adc772b40a2b408b4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count document countDocuments()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/count-products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"count-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "countDocuments 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/count-products-two",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"count-products-two"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOne ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/product-update?id=63c1a4aab5947d6cb2fa450a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"product-update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "63c1a4aab5947d6cb2fa450a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/api/product-update-many",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"api",
+						"product-update-many"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
